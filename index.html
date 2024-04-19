@@ -6,6 +6,9 @@
     <!-- link boostrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- aos -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <!-- my csss -->
     <link rel="stylesheet" href="style.css">
     <title>portofolio sunny</title>
 </head>
@@ -53,10 +56,10 @@
         </div>
     </div>
         <div class="row text-center justify-content-center fs-5 ">
-            <div class="col-md-4">
+            <div class="col-md-4" data-aos =  "fade-right" data-aos-duration="500">
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere amet accusantium porro laudantium odit eveniet eos alias odio perspiciatis molestiae commodi nisi, reiciendis a nesciunt ad, ratione vitae iusto natus!</p>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4"  data-aos="fade-left" data-aos-delay="500" data-aos-duration="500">
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere amet accusantium porro laudantium odit eveniet eos alias odio perspiciatis molestiae commodi nisi, reiciendis a nesciunt ad, ratione vitae iusto natus!</p>
             </div>
         </div>
@@ -73,7 +76,7 @@
       </div>
     </div>
     <div class="row justify-content-center">
-      <div class="col-md-4 mb-2">
+      <div class="col-md-4 mb-2 my-card">
         <div class="card " >
         <img src="./asset/1.jpg" class="card-img-top" alt="todo apps">
         <div class="card-body">
@@ -83,7 +86,7 @@
         </div>
       </div>
     </div>
-      <div class="col-md-4 mb-2">
+      <div class="col-md-4 mb-2 my-card">
          <div class="card " >
         <img src="./asset/2.jpg" class="card-img-top" alt="bookshelv apps">
         <div class="card-body">
@@ -93,7 +96,7 @@
         </div>
       </div>
     </div>
-      <div class="col-md-4 mb-2">
+      <div class="col-md-4 mb-2 my-card">
          <div class="card " >
         <img src="./asset/3.jpg" class="card-img-top" alt="blog apps">
         <div class="card-body">
@@ -103,7 +106,7 @@
         </div>
       </div>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-4 my-card">
       <div class="card" >
      <img src="./asset/4.jpg" class="card-img-top" alt="portofolio web">
      <div class="card-body">
@@ -163,8 +166,23 @@
   <p> Created by ahmad sunny mubarok <i class="bi bi-android2 text-success"></i></p>
 </footer>
 
-    
+    <!-- js boostrap -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<!-- aos -->
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  const cardProject = document.querySelectorAll('.my-card');
+
+  cardProject.forEach((card , i) => {
+    card.dataset.aos= 'fade-down';
+    card.dataset.aosDelay= i * 100;
+
+  })
+  AOS.init({
+    once :true
+  });
+</script>
+<!-- js memasukan pesan dari  form kontak ke google spread shit -->
 <script>
   const scriptURL = "https://script.google.com/macros/s/AKfycbyiqRGdKG8tSgDn_WXPcoUMZYgw5cEqqHEoIEUfj5Q7nzCQUWUU6iVAchu9w4nn7YpjeQ/exec ";
   const form = document.forms['submit-to-google-sheet'];
